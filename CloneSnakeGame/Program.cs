@@ -84,19 +84,8 @@ namespace CloneSnakeGame
         {
             int height = 30;
             int width = 50;
-
-            List<int> xSnake = new List<int> { 6, 5, 4, 3, 2, 1 };
-            List<int> ySnake = new List<int> { 1, 1, 1, 1, 1, 1 };
-
-            char direction = 'R';
-            bool check = false, ok = false;
-
-            Random Food = new Random();
-            int xFood = Food.Next(1, width + 1);
-            int yFood = Food.Next(1, height + 1);
-
-            int points = 0;
-
+            bool ok = false;
+            bool check = false ;
             while (!ok)
             {
                 check = false;
@@ -117,6 +106,17 @@ namespace CloneSnakeGame
                 switch (choice)
                 {
                     case 1:
+
+                        List<int> xSnake = new List<int> { 6, 5, 4, 3, 2, 1 };
+                        List<int> ySnake = new List<int> { 1, 1, 1, 1, 1, 1 };
+
+                        char direction = 'R';
+
+                        Random Food = new Random();
+                        int xFood = Food.Next(1, width + 1);
+                        int yFood = Food.Next(1, height + 1);
+
+                        int points = 0;
                         while (!check)
                         {
                             MoveSnake(xSnake, ySnake, direction);
